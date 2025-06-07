@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e07e96a7-a7b5-44e5-9330-1ffc61ed2c6b" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Inventario-Perfulandia-main/Perfulandia.v1" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {}
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/SergioDUOCUC/Inventario-Perfulandia.git",
+    "accountId": "cb2386a3-dc11-4056-b350-c703871d853a"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2xKVDNsUNRIeks0vuUw6gtFc06s" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.ServicesTest.buscarUnProductoTest.executor": "Debug",
+    "JUnit.ServicesTest.executor": "Run",
+    "JUnit.ServicesTest.registrarUnProductoTest.executor": "Run",
+    "JUnit.ServicesTest.testObtenerProductos.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.PerfulandiaApplication.executor": "Run",
+    "git-widget-placeholder": "pruebas",
+    "last_opened_file_path": "C:/Users/PC/Desktop/Microservicio-Inventario",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "proofread",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.perfulandia.cl.Perfulandia" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ServicesTest.registrarUnProductoTest">
+    <configuration name="ServicesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Perfulandia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.perfulandia.cl.Perfulandia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.perfulandia.cl.Perfulandia" />
+      <option name="MAIN_CLASS_NAME" value="com.perfulandia.cl.Perfulandia.ServicesTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicesTest.buscarUnProductoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Perfulandia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.perfulandia.cl.Perfulandia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.perfulandia.cl.Perfulandia" />
+      <option name="MAIN_CLASS_NAME" value="com.perfulandia.cl.Perfulandia.ServicesTest" />
+      <option name="METHOD_NAME" value="buscarUnProductoTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicesTest.registrarUnProductoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Perfulandia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.perfulandia.cl.Perfulandia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.perfulandia.cl.Perfulandia" />
+      <option name="MAIN_CLASS_NAME" value="com.perfulandia.cl.Perfulandia.ServicesTest" />
+      <option name="METHOD_NAME" value="registrarUnProductoTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicesTest.testObtenerProductos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Perfulandia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.perfulandia.cl.Perfulandia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.perfulandia.cl.Perfulandia" />
+      <option name="MAIN_CLASS_NAME" value="com.perfulandia.cl.Perfulandia.ServicesTest" />
+      <option name="METHOD_NAME" value="testObtenerProductos" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PerfulandiaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="Perfulandia" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.perfulandia.cl.Perfulandia.PerfulandiaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ServicesTest.registrarUnProductoTest" />
+        <item itemvalue="JUnit.ServicesTest.buscarUnProductoTest" />
+        <item itemvalue="JUnit.ServicesTest.testObtenerProductos" />
+        <item itemvalue="JUnit.ServicesTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e07e96a7-a7b5-44e5-9330-1ffc61ed2c6b" name="Changes" comment="" />
+      <created>1746077710894</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746077710894</updated>
+      <workItem from="1746077712234" duration="701000" />
+      <workItem from="1747686632515" duration="5227000" />
+      <workItem from="1747692955891" duration="72000" />
+      <workItem from="1748029144303" duration="3434000" />
+      <workItem from="1748051055789" duration="732000" />
+      <workItem from="1748186092059" duration="668000" />
+      <workItem from="1748189488848" duration="2524000" />
+      <workItem from="1748205501661" duration="4215000" />
+      <workItem from="1748218838806" duration="43000" />
+      <workItem from="1748218946155" duration="45000" />
+      <workItem from="1748250904787" duration="15000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Inventario-Perfulandia-main/Perfulandia.v1/src/test/java/com/perfulandia/cl/Perfulandia/ServicesTest.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
