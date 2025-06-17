@@ -4,24 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e07e96a7-a7b5-44e5-9330-1ffc61ed2c6b" name="Changes" comment="" />
+    <list default="true" id="e07e96a7-a7b5-44e5-9330-1ffc61ed2c6b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Inventario-Perfulandia-main/Perfulandia.v1" beforeDir="false" afterPath="$PROJECT_DIR$/Inventario-Perfulandia-main/Perfulandia.v1" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Inventario-Perfulandia-main/Perfulandia.v1" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/SergioDUOCUC/Inventario-Perfulandia.git",
-    "accountId": "cb2386a3-dc11-4056-b350-c703871d853a"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SergioDUOCUC/Inventario-Perfulandia.git&quot;,
+    &quot;accountId&quot;: &quot;cb2386a3-dc11-4056-b350-c703871d853a&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -44,7 +46,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.PerfulandiaApplication.executor": "Run",
-    "git-widget-placeholder": "pruebas",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/PC/Desktop/Microservicio-Inventario",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
