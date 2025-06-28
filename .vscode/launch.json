@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-PerfulandiaApplication<Perfulandia>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.perfulandia.cl.Perfulandia.PerfulandiaApplication",
+            "projectName": "Perfulandia",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
