@@ -1,6 +1,5 @@
 package com.perfulandia.cl.Perfulandia.controller;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +20,10 @@ import com.perfulandia.cl.Perfulandia.model.StockSucursal;
 import com.perfulandia.cl.Perfulandia.model.StockSucursalDTO;
 import com.perfulandia.cl.Perfulandia.services.StockSucursalService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+
 @RestController
 @RequestMapping("/api/stock")
 public class StockSucursalController {
@@ -28,28 +31,28 @@ public class StockSucursalController {
     @Autowired
     private StockSucursalService stockService;
 
-    // GET /api/stock → obtener todos
-    @GetMapping //[LISTO]
+    @GetMapping
+    @Operation(summary = "Obtener todos los registros de stock", description = "Retorna todos los registros de stock disponibles en el sistema.")
+    @ApiResponse(responseCode = "200", description = "Lista de stock obtenida correctamente", content = @Content(mediaType = "application/json"))
     public List<StockSucursal> getAllStock() {
         return stockService.getAll();
     }
 
-
-    // Buscar stock por ID de producto 	http://localhost:8080/api/stock/por-id-producto?idProducto=P1
     @GetMapping("/por-id-producto")
+    @Operation(summary = "Buscar stock por ID de producto", description = "Obtiene el stock de un producto específico según su ID.")
     public StockSucursal buscarPorIdProducto(@RequestParam String idProducto) {
         return stockService.buscarPorIdProducto(idProducto);
     }
 
-    // http://localhost:8080/api/stock/producto/P1 [LISTO]
     @GetMapping("/producto/{id}")
+    @Operation(summary = "Obtener stock por ID de producto", description = "Retorna el stock asociado a un producto específico.")
     public ResponseEntity<StockSucursal> getStockByProducto(@PathVariable("id") String idProducto) {
         StockSucursal stock = stockService.obtenerStockPorProducto(idProducto);
         return ResponseEntity.ok(stock);
     }
 
-    // http://localhost:8080/api/stock/{id} [LISTO]
     @GetMapping("/{id}")
+    @Operation(summary = "Obtener stock por ID de stock", description = "Busca un registro de stock según su ID único.")
     public ResponseEntity<StockSucursal> getStockById(@PathVariable("id") String id) {
         StockSucursal stock = stockService.getById(id);
         if (stock == null) {
@@ -58,21 +61,14 @@ public class StockSucursalController {
         return ResponseEntity.ok(stock);
     }
 
-    // GET /api/stock/sucursal/{id}
-    //@GetMapping("/sucursal/{id}")
-    //public List<StockSucursal> getStockBySucursal(@PathVariable String id_sucursal) {
-    //    return stockService.getBySucursal(id_sucursal);
-    //}
-    // GET /api/stock/bajo/{umbral} [LISTO]
     @GetMapping("/bajo/{umbral}")
+    @Operation(summary = "Obtener stock bajo umbral", description = "Retorna todos los productos cuyo stock sea menor o igual al umbral especificado.")
     public List<StockSucursal> getStockBajoUmbral(@PathVariable Integer umbral) {
         return stockService.getStocksBajoUmbral(umbral);
     }
 
-
-//POST /api/stock → crear nuevo stock [LISTO]
-
     @PostMapping
+    @Operation(summary = "Crear nuevo registro de stock", description = "Agrega un nuevo registro de stock con información del producto y sucursal.")
     public StockSucursal createStock(@RequestBody StockSucursalDTO dto) {
         StockSucursal nuevoStock = new StockSucursal();
         nuevoStock.setCantidad(dto.getCantidad());
@@ -83,30 +79,26 @@ public class StockSucursalController {
         nuevoStock.setProducto(producto);
 
         StockSucursal creado = stockService.create(nuevoStock);
-        return creado;  // Este objeto tendrá el ID generado automáticamente
+        return creado;
     }
 
-    //Aqui pensando en el futuro sera la resta que trae la venta,
-    //pero tendria que obtener la cantidad actual y restarle lo que necesito
-
-    //// PUT /api/stock/{id}/cantidad → actualizar cantidad [LISTO]
     @PutMapping("/{id}/cantidad")
-    public ResponseEntity<?> restaCantidad_venta (
+    @Operation(summary = "Restar cantidad por venta", description = "Descuenta unidades vendidas del stock actual para un producto dado.")
+    public ResponseEntity<?> restaCantidad_venta(
             @PathVariable String id,
             @RequestParam Integer cantidadVendida) {
         try {
-            StockSucursal stockActual = stockService.getById(id); // método que debe retornar el stock por ID
+            StockSucursal stockActual = stockService.getById(id);
             if (stockActual == null) {
                 return ResponseEntity.notFound().build();
             }
             if (cantidadVendida > stockActual.getCantidad()) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                        .body(ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                                .body("No se puede vender más de lo disponible. Stock actual: " + stockActual.getCantidad()));
+                        .body("No se puede vender más de lo disponible. Stock actual: " + stockActual.getCantidad());
             }
             int nuevaCantidad = stockActual.getCantidad() - cantidadVendida;
             stockActual.setCantidad(nuevaCantidad);
-            StockSucursal actualizado = stockService.create(stockActual); // reutiliza método de guardado
+            StockSucursal actualizado = stockService.create(stockActual);
             if (nuevaCantidad <= 5) {
                 String alerta = "¡Atención! Solo quedan " + nuevaCantidad + " unidades del producto.";
                 return ResponseEntity.ok().body(new StringBuilder()
@@ -124,8 +116,8 @@ public class StockSucursalController {
         }
     }
 
-    // PUT /api/stock/{id}/agregar → agregar stock recibido [LISTO]
     @PutMapping("/{id}/agregar")
+    @Operation(summary = "Agregar cantidad al stock", description = "Aumenta el stock de un producto dado agregando nuevas unidades.")
     public ResponseEntity<?> agregarCantidad(
             @PathVariable String id,
             @RequestParam Integer cantidadAgregada) {
@@ -144,10 +136,8 @@ public class StockSucursalController {
         }
     }
 
-
-
-    //// DELETE /api/stock/{id} → eliminar [LISTO]
     @DeleteMapping("/{id}")
+    @Operation(summary = "Eliminar registro de stock", description = "Elimina un registro de stock a partir de su ID.")
     public ResponseEntity<String> deleteStock(@PathVariable String id) {
         try {
             StockSucursal stock = stockService.getById(id);
@@ -163,5 +153,4 @@ public class StockSucursalController {
         }
     }
 
-    
 }

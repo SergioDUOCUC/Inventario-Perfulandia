@@ -144,7 +144,7 @@ public class ServicesTest {
 
     @Test
     public void testObtenerStockPorProducto() {
-        String idProducto = "P2132121";
+        String idProducto = "P1";
 
         StockSucursal stock = stocksucursalservice.obtenerStockPorProducto(idProducto);
 

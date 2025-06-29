@@ -26,6 +26,7 @@ import com.perfulandia.cl.Perfulandia.services.ProductoService;
 @RestController
 @RequestMapping("/api/v2/productos")
 public class ProductoControllerV2 {
+
     @Autowired
     private ProductoService productoservice;
 
@@ -33,31 +34,27 @@ public class ProductoControllerV2 {
     private ProductoModelAssembler assembler;
 
     @GetMapping
-    public ResponseEntity<CollectionModel<EntityModel<Producto>>> ListarProductos() {
-        List<Producto> productos = this.productoservice.buscarTodo();
+    public ResponseEntity<CollectionModel<EntityModel<Producto>>> listarProductos() {
+        List<Producto> productos = productoservice.buscarTodo();
 
         if (productos.isEmpty()) {
-            System.out.println("No se encontró ningún producto");
             return ResponseEntity.ok(
                     CollectionModel.of(List.of(),
-                            linkTo(methodOn(ProductoControllerV2.class).ListarProductos()).withSelfRel()));
+                            linkTo(methodOn(ProductoControllerV2.class).listarProductos()).withSelfRel()));
         } else {
-            System.out.println("Se encontraron productos");
-
             List<EntityModel<Producto>> productosModel = productos.stream()
                     .map(assembler::toModel)
                     .collect(Collectors.toList());
 
             return ResponseEntity.ok(
                     CollectionModel.of(productosModel,
-                            linkTo(methodOn(ProductoControllerV2.class).ListarProductos()).withSelfRel()));
+                            linkTo(methodOn(ProductoControllerV2.class).listarProductos()).withSelfRel()));
         }
     }
 
     @GetMapping("/{id_producto}")
-    public ResponseEntity<?> BuscarPorSku(@PathVariable String id_producto) {
+    public ResponseEntity<?> buscarPorId(@PathVariable String id_producto) {
         try {
-            System.out.println("ID recibido: " + id_producto);
             Producto producto = productoservice.buscarUnProducto2(id_producto);
             if (producto == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -80,7 +77,7 @@ public class ProductoControllerV2 {
 
             EntityModel<String> respuesta = EntityModel.of(
                     "Producto eliminado con éxito.",
-                    linkTo(methodOn(ProductoControllerV2.class).ListarProductos()).withRel("productos"));
+                    linkTo(methodOn(ProductoControllerV2.class).listarProductos()).withRel("productos"));
 
             return ResponseEntity.ok(respuesta);
 
@@ -112,7 +109,7 @@ public class ProductoControllerV2 {
 
                 EntityModel<Producto> productoModel = assembler.toModel(producto);
                 return ResponseEntity.created(
-                        linkTo(methodOn(ProductoControllerV2.class).BuscarPorSku(producto.getId_producto())).toUri())
+                        linkTo(methodOn(ProductoControllerV2.class).buscarPorId(producto.getId_producto())).toUri())
                         .body(productoModel);
 
             } else {
